@@ -287,3 +287,38 @@ const merged = merge({ foo: 1 }, { bar: 2 });
     value: "aaaa",
   };
   ```
+
+### class 에서의 Generics 사용
+
+TypeScript를 이용한 quueue 만들어보기
+
+```typescript
+class Queue<T> {
+  // 빈 배열 생성 Generics의 특성 사용 빈 배열
+  list: T[] = [];
+
+  get length() {
+    return this.list.length;
+  }
+
+  enqueue(item: T) {
+    this.list.push(item);
+  }
+
+  dequeue() {
+    return this.list.shift();
+  }
+}
+
+const queue = new Queue<number>();
+
+queue.enqueue(0);
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
+queue.enqueue(4);
+
+while (queue.length > 0) {
+  console.log(queue.dequeue());
+}
+```

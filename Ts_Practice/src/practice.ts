@@ -1,7 +1,9 @@
-interface Items<T> {
+type Items<T, V> = {
   list: T[];
-}
+  value: V;
+};
 
-const items: Items<string> = {
-  list: [1, 2, 3]],
+const items: Items<number, string> = {
+  list: [1, 2, 3],
+  value: "aaaa",
 };

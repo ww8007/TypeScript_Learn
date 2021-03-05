@@ -260,11 +260,30 @@ const merged = merge({ foo: 1 }, { bar: 2 });
 
   ```typescript
   interface Items<T> {
-     list: T[];
-   }
+    list: T[];
+  }
 
-   const items: Items<string> = {
-     list: [1, 2, 3]],
-   };
+  const items: Items<string> = {
+    list: [1, 2, 3],
+  };
+  ```
 
+* type Alias를 이용하여 Generics 사용 법
+  ```typescript
+  type Items<T> = {
+    list: T[];
+  };
+  ```
+* Generics의 경우 여러개를 사용 가능
+
+  ```typescript
+  type Items<T, V> = {
+    list: T[];
+    value: V;
+  };
+
+  const items: Items<number, string> = {
+    list: [1, 2, 3],
+    value: "aaaa",
+  };
   ```
